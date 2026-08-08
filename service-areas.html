@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JUNKRIGHT — Windsor-Essex Junk Removal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Service Areas | JUNKRIGHT Junk Removal</title>
+<meta name="description" content="JUNKRIGHT provides junk removal, garage cleanouts, hoarder house cleanouts, and commercial junk removal in Amherstburg, LaSalle, and Windsor, Ontario.">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
   :root{
     --concrete:#E4E2DC;
     --card:#F5F1E8;
@@ -52,12 +52,6 @@
 
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
-    .hero h1 .reveal-word,.hero .eyebrow,.hero p.lede,.hero-ctas,.hero .trust-row,.hero-guy-wrap{
-      opacity:1 !important;transform:none !important;filter:none !important;
-    }
-    .hero-guy-shadow{opacity:1 !important;transform:translateX(-50%) !important;}
-    .hero-guy-float{transform:translateX(-50%) !important;}
-    .guy-bag-sway{transform:none !important;}
   }
 
   /* ---------- NAV ---------- */
@@ -103,73 +97,10 @@
   .hero-truck{
     position:absolute;right:-40px;bottom:-30px;width:480px;opacity:0.16;
     pointer-events:none;
-    animation:heroTruckIn 1.3s cubic-bezier(.16,1,.3,1) both;
   }
-  .hero-content{position:relative;z-index:1;max-width:640px;}
+  .hero-content{position:relative;max-width:640px;}
   .hero h1{font-size:clamp(2.5rem,6vw,4.1rem);margin-bottom:22px;}
   .hero h1 em{font-style:normal;color:var(--brand);}
-  .hero h1 .reveal-word{
-    display:inline-block;
-    opacity:0;
-    animation:heroRevealUp .85s cubic-bezier(.16,1,.3,1) both;
-  }
-  .hero .eyebrow{opacity:0;animation:heroRevealUp .7s cubic-bezier(.16,1,.3,1) both;animation-delay:.05s;}
-  .hero p.lede{opacity:0;animation:heroRevealUp .8s cubic-bezier(.16,1,.3,1) both;animation-delay:.68s;}
-  .hero-ctas{opacity:0;animation:heroRevealUp .8s cubic-bezier(.16,1,.3,1) both;animation-delay:.86s;}
-  .trust-row{opacity:0;animation:heroRevealUp .8s cubic-bezier(.16,1,.3,1) both;animation-delay:1.02s;}
-  @keyframes heroRevealUp{
-    0%{opacity:0;transform:translateY(22px);filter:blur(6px);}
-    100%{opacity:1;transform:translateY(0);filter:blur(0);}
-  }
-  @keyframes heroTruckIn{
-    0%{opacity:0;transform:translateX(70px) scale(0.97);}
-    100%{opacity:0.16;transform:translateX(0) scale(1);}
-  }
-
-  /* ---------- HERO WORKER ---------- */
-  .hero-guy-wrap{
-    position:absolute;right:36px;top:50%;margin-top:-150px;
-    width:230px;height:300px;z-index:1;
-    opacity:0;
-    animation:guyWalkIn 1.1s cubic-bezier(.22,.85,.32,1) both;
-    animation-delay:.95s;
-  }
-  .hero-guy-shadow{
-    position:absolute;left:50%;bottom:6px;width:150px;height:22px;
-    transform:translateX(-50%);
-    background:radial-gradient(ellipse at center, rgba(0,0,0,0.5), transparent 72%);
-    filter:blur(2px);
-    animation:guyShadowPulse 3.6s ease-in-out infinite;
-    animation-delay:2.05s;
-  }
-  .hero-guy-float{
-    position:absolute;left:50%;bottom:18px;width:200px;
-    transform:translateX(-50%);
-    animation:guyBob 3.6s ease-in-out infinite;
-    animation-delay:2.05s;
-  }
-  .hero-guy-svg{display:block;width:100%;height:auto;filter:drop-shadow(0 16px 18px rgba(0,0,0,0.35));}
-  .guy-bag-sway{animation:bagSway 3.4s ease-in-out infinite;animation-delay:2.15s;transform-origin:124px 55px;}
-  @keyframes guyWalkIn{
-    0%{opacity:0;transform:translateX(60px);}
-    20%{opacity:1;}
-    45%{transform:translateX(-8px) translateY(-6px);}
-    65%{transform:translateX(4px) translateY(0);}
-    100%{opacity:1;transform:translateX(0) translateY(0);}
-  }
-  @keyframes guyBob{
-    0%,100%{transform:translateX(-50%) translateY(0);}
-    50%{transform:translateX(-50%) translateY(-7px);}
-  }
-  @keyframes guyShadowPulse{
-    0%,100%{transform:translateX(-50%) scale(1);opacity:1;}
-    50%{transform:translateX(-50%) scale(.88);opacity:.7;}
-  }
-  @keyframes bagSway{
-    0%,100%{transform:rotate(-2deg);}
-    50%{transform:rotate(2.5deg);}
-  }
-  @media(max-width:960px){.hero-guy-wrap{display:none;}}
   .hero p.lede{
     font-size:1.08rem;color:var(--steel-light);max-width:520px;margin-bottom:34px;
   }
@@ -206,10 +137,11 @@
 
   /* ---------- SERVICES ---------- */
   .services-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;
+    background:var(--ink);border:2px solid var(--ink);
   }
   .service-card{
-    background:var(--card);padding:30px 26px;border-radius:6px;border:2px solid var(--ink);
+    background:var(--card);padding:30px 26px;border-radius:6px;
     transition:background .15s ease;
   }
   .service-card:hover{background:#fff;}
@@ -324,6 +256,8 @@
   .footer-areas{font-size:0.85rem;max-width:280px;}
   .footer-bottom{font-size:0.78rem;color:var(--steel);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;}
 
+  [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].is-visible{opacity:1;transform:translateY(0);}
 
   /* ---------- ADDED: Services nav dropdown ---------- */
   .nav-dropdown{position:relative;}
@@ -446,10 +380,7 @@
   .local-content h3:first-child{margin-top:0;}
   .local-content p{color:var(--ink-soft);font-size:0.97rem;line-height:1.75;margin-bottom:16px;}
 
-  [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
-  [data-reveal].is-visible{opacity:1;transform:translateY(0);}
 </style>
-</head>
 <body>
 
 <nav class="nav">
@@ -467,287 +398,77 @@
           <a href="service-areas.html">Service Areas</a>
         </div>
       </details>
-      <a class="btn btn-primary btn-small" href="#quote">Get Quote</a>
+      <a class="btn btn-primary btn-small" href="index.html#quote">Get Quote</a>
     </div>
   </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <svg class="hero-truck" viewBox="0 0 500 220" fill="none" aria-hidden="true">
-    <rect x="20" y="70" width="260" height="90" rx="4" stroke="#78C227" stroke-width="3"/>
-    <path d="M280 100h70l45 40v20h-115z" stroke="#78C227" stroke-width="3"/>
-    <rect x="300" y="112" width="40" height="30" stroke="#78C227" stroke-width="2.5"/>
-    <circle cx="90" cy="168" r="24" stroke="#78C227" stroke-width="3"/>
-    <circle cx="90" cy="168" r="8" stroke="#78C227" stroke-width="2.5"/>
-    <circle cx="360" cy="168" r="24" stroke="#78C227" stroke-width="3"/>
-    <circle cx="360" cy="168" r="8" stroke="#78C227" stroke-width="2.5"/>
-    <line x1="20" y1="70" x2="20" y2="40" stroke="#78C227" stroke-width="3"/>
-    <line x1="20" y1="40" x2="200" y2="40" stroke="#78C227" stroke-width="3" stroke-dasharray="6 6"/>
-  </svg>
-  <div class="hero-guy-wrap" aria-hidden="true">
-    <div class="hero-guy-shadow"></div>
-    <div class="hero-guy-float">
-      <svg class="hero-guy-svg" viewBox="0 0 200 260" fill="none">
-        <!-- back leg (trailing, pushing off) -->
-        <path d="M99 150 L114 186 L128 224 L138 230 L124 236 L110 230 L108 192 L90 158 Z" fill="#2b2f38"/>
-        <ellipse cx="132" cy="230" rx="13" ry="6.5" fill="#141412"/>
-        <!-- bag slung over the back shoulder -->
-        <g class="guy-bag-sway">
-          <path d="M118 60 C106 78 102 110 110 138 C117 158 152 158 158 138 C166 110 162 78 150 62 C142 50 126 50 118 60 Z" fill="#2c2c28"/>
-          <path d="M132 62c4 3 8 8 8 14" stroke="#54544e" stroke-width="3" stroke-linecap="round" fill="none"/>
-        </g>
-        <!-- front leg (forward, planted) -->
-        <path d="M82 150 L70 188 L58 228 L67 236 L82 236 L80 194 L96 158 Z" fill="#3a3f4c"/>
-        <ellipse cx="64" cy="233" rx="14" ry="7" fill="#141412"/>
-        <!-- torso / JUNKRIGHT shirt -->
-        <path d="M62 84 C58 100 56 130 62 152 L100 158 L104 152 C110 130 108 100 104 84 C92 74 74 74 62 84 Z" fill="#6faa22"/>
-        <!-- back arm raised, hand gripping the bag tie -->
-        <path d="M100 90 C110 82 118 70 122 58" stroke="#6faa22" stroke-width="16" stroke-linecap="round"/>
-        <circle cx="124" cy="55" r="7.5" fill="#c69766"/>
-        <!-- front arm swinging forward -->
-        <path d="M64 92 C54 102 46 112 42 124" stroke="#5f9a1d" stroke-width="15" stroke-linecap="round"/>
-        <path d="M42 122 C39 130 38 138 40 146" stroke="#c69766" stroke-width="11" stroke-linecap="round"/>
-        <circle cx="41" cy="147" r="6.5" fill="#c69766"/>
-        <!-- tattoo marks on visible forearm -->
-        <path d="M39 126c3 1 5 4 3 7" stroke="#2c2c28" stroke-width="1.9" fill="none" opacity="0.7" stroke-linecap="round"/>
-        <path d="M37 135c3 0 5 2 4 5" stroke="#2c2c28" stroke-width="1.9" fill="none" opacity="0.65" stroke-linecap="round"/>
-        <circle cx="39" cy="143" r="1.7" fill="#2c2c28" opacity="0.6"/>
-        <!-- JUNKRIGHT chest logo patch -->
-        <rect x="85" y="97" width="17" height="17" rx="3" fill="#141412"/>
-        <rect x="90.5" y="101" width="6" height="8" rx="1" fill="#78C227"/>
-        <line x1="92.3" y1="102.5" x2="92.3" y2="107.5" stroke="#141412" stroke-width="0.7"/>
-        <line x1="94.7" y1="102.5" x2="94.7" y2="107.5" stroke="#141412" stroke-width="0.7"/>
-        <rect x="89.8" y="99.6" width="7.4" height="2" rx="0.6" fill="#78C227"/>
-        <!-- neck -->
-        <rect x="78" y="66" width="14" height="15" fill="#c69766"/>
-        <!-- head -->
-        <circle cx="85" cy="50" r="19" fill="#c69766"/>
-        <ellipse cx="67" cy="53" rx="2.2" ry="3.4" fill="#c69766"/>
-        <path d="M66 42 C68 30 80 24 90 27 C99 30 104 38 103 47 C97 40 88 36 79 37 C72 38 68 40 66 42 Z" fill="#221f1c"/>
-        <path d="M103 48c2 2 2 4 0 6" stroke="#a97e50" stroke-width="1.6" fill="none" opacity="0.55" stroke-linecap="round"/>
-        <!-- JUNKRIGHT cap -->
-        <path d="M64 40 C64 27 73 18 85 18 C97 18 106 27 106 40 L106 42 L64 42 Z" fill="#141412"/>
-        <path d="M62 41 C62 39 63 38 65 38 L82 38 L82 44 L64 44 C63 44 62 43 62 41 Z" fill="#0e0e0d"/>
-        <rect x="79" y="24" width="11" height="13" rx="2" fill="#78C227"/>
-        <line x1="82.3" y1="27" x2="82.3" y2="34" stroke="#141412" stroke-width="0.8"/>
-        <line x1="86.2" y1="27" x2="86.2" y2="34" stroke="#141412" stroke-width="0.8"/>
-        <rect x="78.5" y="22" width="12" height="2.6" rx="0.8" fill="#78C227"/>
-      </svg>
-    </div>
+</nav><div class="crumb-bar">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span class="current" aria-current="page">Service Areas</span>
+    </nav>
   </div>
-  <div class="wrap hero-content">
-    <span class="eyebrow">WINDSOR–ESSEX JUNK REMOVAL</span>
-    <h1><span class="reveal-word" style="animation-delay:.08s">POINT</span> <span class="reveal-word" style="animation-delay:.18s">AT</span> <span class="reveal-word" style="animation-delay:.28s">IT.</span><br><em><span class="reveal-word" style="animation-delay:.42s">WE</span> <span class="reveal-word" style="animation-delay:.52s">HAUL</span> <span class="reveal-word" style="animation-delay:.62s">IT.</span></em></h1>
-    <p class="lede">Full-service junk removal for homes and job sites across Windsor-Essex. You show us what goes — two guys and a truck handle the rest. Same-day service, upfront pricing, nothing left behind.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#quote">Get My Free Quote</a>
-      <a class="btn btn-ghost-dark" href="tel:12269463363">Call 226-946-3363</a>
+</div>
+<header class="hub-header">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">SERVICE AREAS</span>
+      <h1 style="font-size:clamp(2.1rem,4.5vw,3rem);margin-bottom:14px;">Where We Work</h1>
+      <p>JUNKRIGHT is based in Amherstburg and focuses on three core communities. Pick your area below to see every service we offer there.</p>
     </div>
-    <ul class="trust-row">
-      <li>Licensed &amp; Insured</li>
-      <li>Same-Day Service</li>
-      <li>We Donate &amp; Recycle First</li>
-    </ul>
   </div>
 </header>
-
-<section id="services" data-reveal>
+<section id="areas-listing" data-reveal>
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">SERVICES</span>
-      <h2>What We Haul</h2>
-      <p>If it's too heavy, too big, or you're just done looking at it — that's a JUNKRIGHT job.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-8h6v8"/></svg>
-        <h3>Residential Cleanouts</h3>
-        <p>Garages, basements, attics, whole-house — we clear it room by room or all at once.</p>
-      </div>
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 8h6M9 12h6"/></svg>
-        <h3>Furniture &amp; Appliances</h3>
-        <p>Couches, mattresses, fridges, washers and dryers — carried out, no assembly required from you.</p>
-      </div>
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-        <h3>Estate &amp; Move-Out</h3>
-        <p>Downsizing, tenant turnovers, foreclosures — respectful, efficient, done on your timeline.</p>
-      </div>
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l6-14 4 8 3-5 3 11H4z"/></svg>
-        <h3>Construction &amp; Reno Debris</h3>
-        <p>Drywall, flooring, cabinets, job-site scrap — we work around your crew's schedule.</p>
-      </div>
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M4 8l8-6 8 6M6 20h12"/></svg>
-        <h3>Yard &amp; Property Cleanup</h3>
-        <p>Sheds, decks, brush, scrap metal — reclaim the yard without renting a bin.</p>
-      </div>
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V4h8v3"/></svg>
-        <h3>Commercial Junk Removal</h3>
-        <p>Offices, retail fit-outs, warehouses — after-hours and weekend pickups available.</p>
-      </div>
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 15l4-4-2-3 5-4 2 3 5-4"/></svg>
-        <h3>Demolition Services</h3>
-        <p>Sheds, decks, interior teardowns, small structures — knockdown and full debris haul-away in one visit.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pricing" id="pricing" data-reveal>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">HOW PRICING WORKS</span>
-      <h2>You Don't Pay for Air.</h2>
-      <p>We price by how much of the truck your junk actually fills &mdash; not by the hour, not by guesswork. Drag the slider below to see roughly where your job lands.</p>
-    </div>
-    <div class="price-slider-card">
-      <div class="price-display">
-        <span class="price-value" id="price-value">$150</span>
-        <span class="price-label" id="price-label">1/8th Load &mdash; A Few Items</span>
-      </div>
-      <div class="price-gauge-visual" id="price-gauge-visual"><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
-      <div class="price-ticks"><span>1/8</span><span>1/4</span><span>3/8</span><span>1/2</span><span>5/8</span><span>3/4</span><span>7/8</span><span>Full+</span></div>
-      <input type="range" id="price-slider" min="0" max="8" step="1" value="0" data-default="0" class="price-range" aria-label="Estimated load size and price">
-      <div class="price-range-labels">
-        <span>1/8th Load</span>
-        <span>Full Truck &amp; Beyond</span>
-      </div>
-    </div>
-    <p class="pricing-note">Prices are estimates in CAD, plus tax. Final price is always confirmed on-site before we lift a single item &mdash; never after.</p>
-    <p class="pricing-disclaimer">All quotes are verified with photos first, then confirmed with a final price at a completely free, no-obligation on-site visit.</p>
-  </div>
-</section>
-
-<section id="process" data-reveal>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">THE PROCESS</span>
-      <h2>Three Steps. That's It.</h2>
-    </div>
-    <div class="process-list">
-      <div class="process-step">
-        <span class="process-num">01</span>
-        <h3>Book</h3>
-        <p>Text a photo or fill out the form below. We'll give you a price range in minutes.</p>
-      </div>
-      <div class="process-step">
-        <span class="process-num">02</span>
-        <h3>We Haul</h3>
-        <p>We show up in the window you picked, confirm the price on-site, and load it all up.</p>
-      </div>
-      <div class="process-step">
-        <span class="process-num">03</span>
-        <h3>It's Gone</h3>
-        <p>We sort what's donated, recycled, or disposed of properly. You get your space back.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="area" data-reveal>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">SERVICE AREA</span>
-      <h2>Where We Show Up</h2>
-    </div>
-    <div class="area-chips">
-      <span class="chip">Amherstburg</span>
-      <span class="chip">Windsor</span>
-      <span class="chip">Kingsville</span>
-      <span class="chip">Harrow</span>
-      <span class="chip">LaSalle</span>
-    </div>
-    <p class="area-note">Based in Amherstburg, covering Windsor, Kingsville, Harrow, LaSalle, and the towns between. Don't see your town? Ask anyway — chances are we can still make it out.</p>
-    <p style="margin-top:18px;"><a href="services/index.html" style="font-family:var(--font-mono);font-size:0.85rem;color:var(--brand-dark);font-weight:600;">Browse all services &rarr;</a></p>
-  </div>
-</section>
-
-<section id="why" data-reveal>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">WHY JUNKRIGHT</span>
-      <h2>Straightforward, By Design</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>We Donate &amp; Recycle First</h3>
-        <p>Usable items go to local charities and reuse centres before anything ever sees a landfill.</p>
-      </div>
-      <div class="why-card accent-orange">
-        <h3>Upfront, On-Site Pricing</h3>
-        <p>You see and approve the price before we touch a single item. No surprises on the invoice.</p>
-      </div>
-      <div class="why-card">
-        <h3>Licensed &amp; Insured</h3>
-        <p>Your home, driveway, and property are covered — guaranteed, every job.</p>
-      </div>
-      <div class="why-card accent-orange">
-        <h3>Local, Not a Franchise</h3>
-        <p>Windsor-Essex owned and operated. Calls get answered by someone who knows the area.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="quote-section" id="quote" data-reveal>
-  <div class="wrap">
-    <div class="ticket">
-      <span class="stamp">FREE ESTIMATE</span>
-      <h2>Get Your Free Quote</h2>
-      <p class="ticket-sub">Tell us what needs to go. We'll get back to you with a price range same day.</p>
-      <form id="quote-form">
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="q-name">Name</label>
-            <input id="q-name" name="name" type="text" required>
-          </div>
-          <div class="form-field">
-            <label for="q-phone">Phone</label>
-            <input id="q-phone" name="phone" type="tel" required>
-          </div>
-          <div class="form-field">
-            <label for="q-email">Email</label>
-            <input id="q-email" name="email" type="email" required>
-          </div>
-          <div class="form-field">
-            <label for="q-city">Town</label>
-            <select id="q-city" name="city" required>
-              <option value="">Select your town</option>
-              <option>Amherstburg</option>
-              <option>Windsor</option>
-              <option>Kingsville</option>
-              <option>Harrow</option>
-              <option>LaSalle</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-field full">
-            <label for="q-details">What needs to go?</label>
-            <textarea id="q-details" name="details" placeholder="e.g. old couch, mattress, garage full of boxes..." required></textarea>
-          </div>
-          <div class="form-field full">
-            <label>Timing</label>
-            <div class="radio-row">
-              <label class="radio-opt"><input type="radio" name="timing" value="ASAP" checked> ASAP</label>
-              <label class="radio-opt"><input type="radio" name="timing" value="This week"> This week</label>
-              <label class="radio-opt"><input type="radio" name="timing" value="Just checking prices"> Just checking prices</label>
-            </div>
-          </div>
+    <div class="service-hub-grid" style="grid-template-columns:1fr;gap:2px;">
+      <div class="service-hub-card" style="text-decoration:none;">
+        <span class="eyebrow" style="margin-bottom:6px;">AREA 1</span>
+        <h3>Amherstburg</h3>
+        <p>Our home base. Amherstburg gets the fastest response times and the largest share of our day-to-day jobs, from single-item pickups to full property cleanouts.</p>
+        <div class="area-chips">
+          <a class="chip" href="areas/amherstburg-junk-removal.html">Junk Removal</a>
+          <a class="chip" href="services/garage-cleanout.html">Garage Cleanout</a>
+          <a class="chip" href="services/hoarder-house-cleanout.html">Hoarder House Cleanout</a>
+          <a class="chip" href="services/commercial-junk-removal.html">Commercial Junk Removal</a>
         </div>
-        <button type="submit" class="btn btn-primary">Request My Free Quote</button>
-        <p class="form-note">Submitting sends your request straight to us — no email app needed.</p>
-        <div id="form-confirm"></div>
-      </form>
+      </div>
+
+      <div class="service-hub-card" style="text-decoration:none;">
+        <span class="eyebrow" style="margin-bottom:6px;">AREA 2</span>
+        <h3>LaSalle</h3>
+        <p>South of Windsor along the river. A fast-growing town where we regularly clear garages, basements, and post-renovation debris in the newer subdivisions.</p>
+        <div class="area-chips">
+          <a class="chip" href="areas/lasalle-junk-removal.html">Junk Removal</a>
+          <a class="chip" href="services/garage-cleanout.html">Garage Cleanout</a>
+          <a class="chip" href="services/hoarder-house-cleanout.html">Hoarder House Cleanout</a>
+          <a class="chip" href="services/commercial-junk-removal.html">Commercial Junk Removal</a>
+        </div>
+      </div>
+
+      <div class="service-hub-card" style="text-decoration:none;">
+        <span class="eyebrow" style="margin-bottom:6px;">AREA 3</span>
+        <h3>Windsor</h3>
+        <p>A short drive from home base. More move-out cleanouts, renovation debris, and commercial turnovers &mdash; same-day and next-day availability applies here too.</p>
+        <div class="area-chips">
+          <a class="chip" href="areas/windsor-junk-removal.html">Junk Removal</a>
+          <a class="chip" href="services/garage-cleanout.html">Garage Cleanout</a>
+          <a class="chip" href="services/hoarder-house-cleanout.html">Hoarder House Cleanout</a>
+          <a class="chip" href="services/commercial-junk-removal.html">Commercial Junk Removal</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
+<section class="hub-cta" data-reveal>
+  <div class="wrap">
+    <h2 style="font-family:var(--font-display);text-transform:uppercase;font-size:1.8rem;">Not in One of These Towns?</h2>
+    <p>We regularly work throughout the wider Windsor-Essex area too &mdash; if it's junk and it's nearby, there's a good chance we can still take it. Ask us.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="index.html#quote">Get My Free Quote</a>
+      <a class="btn btn-ghost-dark" href="tel:12269463363" style="border-color:var(--ink);color:var(--ink);">Call 226-946-3363</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <div class="footer-top">
@@ -767,18 +488,16 @@
       </div>
       <div class="footer-col">
         <strong style="color:var(--card);">Service Area</strong><br><br>
-        Amherstburg, Windsor, Kingsville, Harrow, LaSalle
+        <a href="service-areas.html">Amherstburg, Windsor, LaSalle</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 JUNKRIGHT. Windsor-Essex, ON.</span>
+      <span>&copy; 2026 JUNKRIGHT. Windsor-Essex, ON.</span>
       <span>Licensed &amp; insured. Estimates are always free.</span>
     </div>
   </div>
-</footer>
+</footer><script>
 
-<script>
-  // Reveal-on-scroll, respecting reduced motion
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealEls = document.querySelectorAll('[data-reveal]');
   if(prefersReduced){
@@ -797,107 +516,6 @@
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  // Quote form -> direct submission (no email app required)
-  const form = document.getElementById('quote-form');
-  const confirmBox = document.getElementById('form-confirm');
-  const submitBtn = form.querySelector('button[type="submit"]');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('q-name').value;
-    const phone = document.getElementById('q-phone').value;
-    const email = document.getElementById('q-email').value;
-    const city = document.getElementById('q-city').value;
-    const details = document.getElementById('q-details').value;
-    const timing = form.querySelector('input[name="timing"]:checked').value;
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    confirmBox.style.display = 'none';
-
-    fetch('https://formsubmit.co/ajax/junkrightjosh@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        _subject: 'New Quote Request \u2014 ' + name + ' (' + city + ')',
-        Name: name,
-        Phone: phone,
-        Email: email,
-        Town: city,
-        Timing: timing,
-        'What needs to go': details
-      })
-    })
-    .then(function(res){ if(!res.ok) throw new Error('bad response'); return res.json(); })
-    .then(function(){
-      confirmBox.textContent = 'Thanks \u2014 your quote request has been sent. We\u2019ll be in touch shortly.';
-      confirmBox.style.display = 'block';
-      form.reset();
-    })
-    .catch(function(){
-      const subject = encodeURIComponent('Quote Request \u2014 ' + name + ' (' + city + ')');
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Phone: ' + phone + '\n' +
-        'Email: ' + email + '\n' +
-        'Town: ' + city + '\n' +
-        'Timing: ' + timing + '\n\n' +
-        'What needs to go:\n' + details
-      );
-      window.location.href = 'mailto:junkrightjosh@gmail.com?subject=' + subject + '&body=' + body;
-      confirmBox.textContent = 'We couldn\u2019t reach our server, so we opened your email app instead \u2014 please hit send there.';
-      confirmBox.style.display = 'block';
-    })
-    .finally(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Request My Free Quote';
-    });
-  });
-
-  (function(){
-    var slider = document.getElementById('price-slider');
-    if(!slider) return;
-    var valueEl = document.getElementById('price-value');
-    var labelEl = document.getElementById('price-label');
-    var gaugeEl = document.getElementById('price-gauge-visual');
-    var segEls = document.querySelectorAll('#price-gauge-visual .seg');
-    // 8 fixed truck-fraction tiers, then a final "beyond full load" tier
-    // that hands off to a free on-site quote instead of a fixed price.
-    var steps = [
-      {price:150, label:'1/8th Load \u2014 A Few Items',        filled:1},
-      {price:190, label:'1/4 Load \u2014 Single Room',           filled:2},
-      {price:280, label:'3/8 Load',                              filled:3},
-      {price:370, label:'1/2 Load \u2014 A Couple Rooms',        filled:4},
-      {price:460, label:'5/8 Load',                              filled:5},
-      {price:550, label:'3/4 Load',        filled:6},
-      {price:660, label:'7/8 Load',                              filled:7},
-      {price:750, label:'Full Truck Load',                       filled:8},
-      {price:null,label:'Full House / Major Cleanout \u2014 Contact for a Free On-Site Quote', filled:8}
-    ];
-    function update(val){
-      var i = parseInt(val, 10);
-      if(i < 0) i = 0;
-      if(i > steps.length - 1) i = steps.length - 1;
-      var step = steps[i];
-      var isOver = (i === steps.length - 1);
-
-      valueEl.textContent = isOver ? 'Contact for Quote' : ('$' + step.price + '+');
-      valueEl.classList.toggle('is-special', isOver);
-      labelEl.textContent = step.label;
-      gaugeEl.classList.toggle('is-over', isOver);
-
-      segEls.forEach(function(seg, idx){ seg.classList.toggle('filled', idx < step.filled); });
-
-      var pct = i / (steps.length - 1);
-      var pctStr = (pct*100).toFixed(1) + '%';
-      slider.style.background = 'linear-gradient(to right, var(--brand) 0%, var(--brand) ' + pctStr + ', #e3e0d7 ' + pctStr + ', #e3e0d7 100%)';
-    }
-    var startVal = slider.dataset.default || slider.value;
-    slider.value = startVal;
-    update(startVal);
-    slider.addEventListener('input', function(){ update(slider.value); });
-  })();
-
-
   document.querySelectorAll('.nav-dropdown').forEach(function(d){
     d.querySelectorAll('a').forEach(function(a){
       a.addEventListener('click', function(){ d.removeAttribute('open'); });
@@ -908,6 +526,5 @@
   });
 
 </script>
-
 </body>
 </html>

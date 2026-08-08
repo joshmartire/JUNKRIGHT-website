@@ -347,11 +347,18 @@
     padding:40px 32px;max-width:560px;margin:0 auto;
   }
   .price-display{text-align:center;margin-bottom:24px;}
-  .price-value{display:block;font-family:var(--font-display);font-size:3rem;color:var(--brand-dark);line-height:1;}
+  .price-value{display:block;font-family:var(--font-display);font-size:3rem;color:var(--brand-dark);line-height:1;transition:font-size .15s ease;}
+  .price-value.is-special{font-size:1.6rem;line-height:1.25;}
   .price-label{display:block;font-family:var(--font-mono);font-size:0.92rem;color:var(--ink-soft);margin-top:10px;text-transform:uppercase;letter-spacing:0.04em;}
-  .price-gauge-visual{display:flex;gap:4px;height:28px;margin-bottom:28px;}
+  .price-gauge-visual{display:flex;gap:4px;height:28px;margin-bottom:10px;}
   .price-gauge-visual .seg{flex:1;background:#e3e0d7;border-radius:2px;transition:background .2s ease;}
   .price-gauge-visual .seg.filled{background:var(--brand);}
+  .price-gauge-visual.is-over .seg.filled{background:var(--ink);}
+  .price-ticks{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.66rem;color:var(--steel);margin-bottom:18px;}
+  .price-ticks span{flex:1;text-align:center;}
+  .price-ticks span:first-child{text-align:left;}
+  .price-ticks span:last-child{text-align:right;}
+  .pricing-disclaimer{margin-top:16px;padding-top:16px;border-top:1px dashed #d8d4c8;font-size:0.85rem;line-height:1.5;color:var(--steel);}
   .price-range{
     -webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:5px;
     background:#e3e0d7;outline:none;margin-bottom:16px;display:block;cursor:pointer;
@@ -389,6 +396,7 @@
           <a href="hoarder-house-cleanout.html">Hoarder House Cleanout</a>
           <a href="garage-cleanout.html">Garage Cleanout</a>
           <a href="commercial-junk-removal.html">Commercial Junk Removal</a>
+          <a href="../service-areas.html">Service Areas</a>
         </div>
       </details>
       <a class="btn btn-primary btn-small" href="#quote">Get Quote</a>
@@ -454,16 +462,18 @@
     <div class="price-slider-card">
       <div class="price-display">
         <span class="price-value" id="price-value">$150</span>
-        <span class="price-label" id="price-label">A Few Items</span>
+        <span class="price-label" id="price-label">1/8th Load &mdash; A Few Items</span>
       </div>
       <div class="price-gauge-visual" id="price-gauge-visual"><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
-      <input type="range" id="price-slider" min="150" max="650" step="10" value="150" data-default="500" class="price-range" aria-label="Estimated load size and price">
+      <div class="price-ticks"><span>1/8</span><span>1/4</span><span>3/8</span><span>1/2</span><span>5/8</span><span>3/4</span><span>7/8</span><span>Full+</span></div>
+      <input type="range" id="price-slider" min="0" max="8" step="1" value="5" data-default="5" class="price-range" aria-label="Estimated load size and price">
       <div class="price-range-labels">
-        <span>$150 Min Load</span>
-        <span>$650 Full Truck &amp; Trailer</span>
+        <span>1/8th Load</span>
+        <span>Full Truck &amp; Beyond</span>
       </div>
     </div>
-    <p class="pricing-note">Prices are estimates in CAD. Final price is always confirmed on-site before we lift a single item &mdash; never after.</p>
+    <p class="pricing-note">Prices are estimates in CAD, plus tax. Final price is always confirmed on-site before we lift a single item &mdash; never after.</p>
+    <p class="pricing-disclaimer">All quotes are verified with photos first, then confirmed with a final price at a completely free, no-obligation on-site visit.</p>
   </div>
 </section>
 <section id="process" data-reveal>
@@ -748,23 +758,36 @@
     if(!slider) return;
     var valueEl = document.getElementById('price-value');
     var labelEl = document.getElementById('price-label');
+    var gaugeEl = document.getElementById('price-gauge-visual');
     var segEls = document.querySelectorAll('#price-gauge-visual .seg');
-    var bands = [
-      {max:249, label:'1/8 Load \u2014 A Few Items'},
-      {max:349, label:'1/4 Load \u2014 Single Room'},
-      {max:449, label:'1/2 Load \u2014 Couple Rooms'},
-      {max:549, label:'3/4 Load \u2014 Most of a Home'},
-      {max:650, label:'Full Load \u2014 Truck & Trailer'}
+    // 8 fixed truck-fraction tiers, then a final "beyond full load" tier
+    // that hands off to a free on-site quote instead of a fixed price.
+    var steps = [
+      {price:150, label:'1/8th Load \u2014 A Few Items',        filled:1},
+      {price:190, label:'1/4 Load \u2014 Single Room',           filled:2},
+      {price:280, label:'3/8 Load',                              filled:3},
+      {price:370, label:'1/2 Load \u2014 A Couple Rooms',        filled:4},
+      {price:460, label:'5/8 Load',                              filled:5},
+      {price:550, label:'3/4 Load',        filled:6},
+      {price:660, label:'7/8 Load',                              filled:7},
+      {price:750, label:'Full Truck Load',                       filled:8},
+      {price:null,label:'Full House / Major Cleanout \u2014 Contact for a Free On-Site Quote', filled:8}
     ];
     function update(val){
-      val = parseInt(val, 10);
-      valueEl.textContent = '$' + val;
-      var band = bands[bands.length - 1];
-      for(var i=0;i<bands.length;i++){ if(val <= bands[i].max){ band = bands[i]; break; } }
-      labelEl.textContent = band.label;
-      var pct = (val - 150) / (650 - 150);
-      var filled = Math.round(pct * segEls.length);
-      segEls.forEach(function(seg, i){ seg.classList.toggle('filled', i < filled); });
+      var i = parseInt(val, 10);
+      if(i < 0) i = 0;
+      if(i > steps.length - 1) i = steps.length - 1;
+      var step = steps[i];
+      var isOver = (i === steps.length - 1);
+
+      valueEl.textContent = isOver ? 'Contact for Quote' : ('$' + step.price + '+');
+      valueEl.classList.toggle('is-special', isOver);
+      labelEl.textContent = step.label;
+      gaugeEl.classList.toggle('is-over', isOver);
+
+      segEls.forEach(function(seg, idx){ seg.classList.toggle('filled', idx < step.filled); });
+
+      var pct = i / (steps.length - 1);
       var pctStr = (pct*100).toFixed(1) + '%';
       slider.style.background = 'linear-gradient(to right, var(--brand) 0%, var(--brand) ' + pctStr + ', #e3e0d7 ' + pctStr + ', #e3e0d7 100%)';
     }
